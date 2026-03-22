@@ -20,7 +20,7 @@
 
 *(5x5 自動化系統展示錄影，畫質清晰、完美呈現推導過程)*
 <div align="center">
-  <video src="https://github.com/donuop35/DRL_HW1_Grid_World/raw/main/demo_video/gridworld_demo.webm" width="800" controls autoplay loop muted></video>
+  <img src="demo_video/gridworld_demo.gif" width="800" alt="GridWorld Demo">
 </div>
 
 > [!NOTE]
