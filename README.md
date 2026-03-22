@@ -18,6 +18,11 @@
 
 🎉 **[👉 點我立即體驗 Live Demo 👈](https://drl-hw1-grid-world.onrender.com)** 🎉
 
+*(5x5 自動化系統展示錄影，畫質清晰、完美呈現推導過程)*
+<div align="center">
+  <video src="https://github.com/donuop35/DRL_HW1_Grid_World/raw/main/demo_video/gridworld_demo.webm" width="800" controls autoplay loop muted></video>
+</div>
+
 > [!NOTE]
 > 本展示網頁已完整部署於雲端伺服器，並由 **Python (Flask)** 架構提供強大的強化學習矩陣運算支援！
 > *(溫馨提醒：若長時間無人訪問，免費主機會暫時休眠。初次點開網頁時若載入稍慢（約需等待 30~50 秒），此為伺服器正在喚醒的正常現象，敬請耐心稍候！)*
