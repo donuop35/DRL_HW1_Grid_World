@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GridWorld DRL - HW1</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Main Card -->
+        <div class="surface-card">
+            
+            <header class="app-header">
+                <div class="header-badge">Deep Reinforcement Learning</div>
+                <h1>GridWorld Environment</h1>
+                <p>Alignment with HW1-1 & HW1-2 Grading Standards</p>
+            </header>
+
+            <section class="controls-section">
+                <!-- Grid Settings -->
+                <div class="settings-panel">
+                    <div class="input-group">
+                        <label for="gridSize">Grid Size ($n \times n$)</label>
+                        <div class="input-wrapper">
+                            <input type="number" id="gridSize" value="5" min="5" max="9">
+                            <span class="input-suffix">x n</span>
+                        </div>
+                    </div>
+                    <button id="generateGridBtn" class="btn btn-primary">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-9-9c2.52 0 4.93 1 6.74 2.74L21 8"></path><path d="M21 3v5h-5"></path></svg>
+                        Initialize Grid
+                    </button>
+                </div>
+
+                <!-- Status Panel -->
+                <div class="status-panel">
+                    <h2 id="statusMessage" class="status-message">👉 請點擊下方網格以設定起始點</h2>
+                    <div class="badges-container">
+                        <span id="startStat" class="badge active"><span class="emoji">🟢</span> Start 0/1</span>
+                        <span id="endStat" class="badge pending"><span class="emoji">🔴</span> End 0/1</span>
+                        <span id="obsStat" class="badge pending"><span class="emoji">🧱</span> Obstacles 0/<span id="targetObs">3</span></span>
+                    </div>
+                </div>
+
+                <!-- Action Buttons Phase 2 & 3 -->
+                <div class="actions-panel">
+                    <button id="policyGenBtn" class="btn btn-secondary" disabled>
+                        <span class="btn-icon">🎲</span> Generate Policy
+                    </button>
+                    <button id="policyEvalBtn" class="btn btn-accent" disabled>
+                        <span class="btn-icon">✨</span> Evaluate Policy
+                    </button>
+                    <button id="valueIterBtn" class="btn btn-primary" style="background:#10b981; color:white; box-shadow: 0 4px 12px rgba(16, 185, 129, 0.2);" disabled>
+                        <span class="btn-icon">👑</span> Find Optimal Policy (HW1-3)
+                    </button>
+                </div>
+            </section>
+
+            <!-- Toggle View Mode (Hidden until evaluation complete) -->
+            <div id="viewModeWrapper" class="view-mode-wrapper hidden">
+                <div class="segmented-control">
+                    <button id="viewPolicyBtn" class="seg-btn active">View Policy</button>
+                    <button id="viewValueBtn" class="seg-btn">View Value V(s)</button>
+                </div>
+            </div>
+
+            <!-- Grid Display -->
+            <main class="grid-wrapper">
+                <div id="gridMap" class="grid-map"></div>
+            </main>
+
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
